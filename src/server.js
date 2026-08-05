@@ -7,13 +7,13 @@ import cors from "cors";
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://mini-rede-social.vercel.app/"],
+
+
+app.use(cors({
+    origin: "https://mini-rede-social.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  }),
-);
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
