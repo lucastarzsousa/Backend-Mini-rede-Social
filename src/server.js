@@ -8,7 +8,6 @@ const app = express();
 
 app.use(express.json());
 
-
 app.use(cors({
     origin: "https://mini-rede-social.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
