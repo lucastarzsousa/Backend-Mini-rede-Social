@@ -1,0 +1,1 @@
+Esse backend faz parte de um grande projeto pessoal fullstack que eu desenvolvi. Vou deixar no readME do repositório que contém o deploy final todas as informações técnicas tanto do back quanto do front. O link é : [Frontend](https://mini-rede-social.vercel.app)
