@@ -1,12 +1,11 @@
 import express from "express";
+import cors from "cors";
+
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import messageRoutes from "./routes/message.routes.js";
-import cors from "cors";
 
 const app = express();
-
-app.use(express.json());
 
 app.use(cors({
     origin: "https://mini-rede-social.vercel.app",
@@ -14,8 +13,14 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+app.use(express.json());
+
 app.use("/auth", authRoutes);
 app.use("/user", userRoutes);
 app.use("/message", messageRoutes);
 
-app.listen(3000, () => {});
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
